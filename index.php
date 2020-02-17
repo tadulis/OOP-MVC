@@ -10,15 +10,11 @@ include_once 'Model.php';
 include_once 'Controller.php';
 include_once 'View.php';
 
-$model = new Model();
+$model = new Model('Tomas', 22, 'man');
 $controller = new Controller($model);
 $view = new View($controller, $model);
 
-// priklausomai nuo masyve atsiradusio/neatsiradusio key action atvaizduojamas tam tikras mygtukas
-if (isset($_GET['action']) && !empty($_GET['action'])) {
-    $controller->{$_GET['action']}();
-}
-
-echo $view->output();
+// sukuriamas atvaizdavimas
+echo $view->output($model);
 
 ?>

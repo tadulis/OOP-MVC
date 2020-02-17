@@ -10,9 +10,13 @@ class View
         $this->model = $model;
     }
 
-//     sukuriamas metodas kuris atvaizduos ekrane isvesti su bygtuku ir action aprasymu
-    public function output() {
-        return '<p><a href="next.php?action=clicked">' . $this->model->string . "</a></p>";
+//     aprasomas metodas kuris sukuria lentelem prasuka foreach ir isskirsto objekto masyva i td tagus
+    public function output($userData) {
+        print '<table>';
+        foreach($userData as $data){
+            print '<td>' . $data . '</td>';
+        }
+        print '</table>';
     }
 }
 

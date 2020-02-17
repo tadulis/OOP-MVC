@@ -2,13 +2,18 @@
 
 class Model
 {
-    public $string;
+//     sukuriami kintamieji kurie bus panaudojami userio kurimui (bjektui)
+    public $name;
+    public $age;
+    public $sex;
 
-    public function __construct(){
-//      sukuriamas __construct kuris sukurus objekta panaudojanat klase Moldel sukuria iskart kintamaji string
-        $this->string = "MVC + PHP = Awesome, click here!";
+//     Aprasom __construct kokie parametrai bus jam paduodami norin sukurti objekta
+    public function __construct($name, $age, $sex){
+//     priskiriamos reiksmes
+        $this->name = $name;
+        $this->age = $age;
+        $this->sex =$sex;
     }
-
 }
 
 ?>
