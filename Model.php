@@ -1,18 +1,23 @@
 <?php
 
-class Model
-{
-//     sukuriami kintamieji kurie bus panaudojami userio kurimui (bjektui)
-    public $name;
-    public $age;
-    public $sex;
+include_once 'Database.php';
 
-//     Aprasom __construct kokie parametrai bus jam paduodami norin sukurti objekta
-    public function __construct($name, $age, $sex){
-//     priskiriamos reiksmes
-        $this->name = $name;
-        $this->age = $age;
-        $this->sex =$sex;
+class Model extends Database
+{
+    public function getUserByID($id){
+        $users = [];
+        $db = new Database;
+        $sql = "SELECT * FROM `users` WHERE `id` = $id";
+        $user = $db->select($sql, $users);
+        return $user;
+
+    }
+
+    public function getAllUsersData(){
+        $users = [];
+        $db = New Database();
+        $sql = "SELECT * FROM `users`";
+        return $db->select($sql, $users);
     }
 }
 
