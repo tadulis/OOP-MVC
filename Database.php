@@ -20,34 +20,30 @@ class Database
     }
 
     // Select
-    public function select($sql, $param = [])
+    public function select($sql)
     {
-        $statement = $this->connection->prepare($sql);
-        $statement->execute($param);
+        $statement = $this->connection->query($sql);
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
 
     // Insert
-    public function insert($sql, $param = [])
+    public function insert($sql)
     {
-        $statement = $this->connection->prepare($sql);
-        $statement->execute($param);
+        $statement = $this->connection->query($sql);
         return $this->connection->lastInsertId();
     }
 
     // Update
-    public function update($sql, $param = [])
+    public function update($sql)
     {
-        $statement = $this->connection->prepare($sql);
-        $statement->execute($param);
+        $statement = $this->connection->query($sql);
         return $statement->rowCount();
     }
 
     // Remove
-    public function remove( $sql, $param = [])
+    public function remove( $sql)
     {
-        $statement = $this->connection->prepare($sql);
-        $statement->execute($param);
+        $statement = $this->connection->query($sql);
         return $statement->rowCount();
     }
 
