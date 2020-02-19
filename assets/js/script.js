@@ -1,0 +1,1 @@
+console.log("Frame JavaScript file was loaded successfully");

@@ -1,39 +1,31 @@
 <?php
+   include_once '../config.php';
    include_once '../Database.php';
    include_once '../Model/Form.php';
    include_once '../Model/Tables.php';
    include_once '../Model/Model.php';
    include_once '../Model/Menu.php';
 
+
    $model = New Model();
    $menu = New Menu();
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Home</title>
-	<style type="text/css">
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .menu-link {
-            color: red;
-            text-decoration: none;
-            margin: 0 15px;
-            border: 3px solid black;
-            border-radius: 25%;
-            padding: 0 15px;
-        }
-	</style>
+    <title><?= $data['header'] . " | " . CONFIG['site_title']; ?></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/<?= CONFIG['site_path']; ?>/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/<?= CONFIG['site_path']; ?>/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/<?= CONFIG['site_path']; ?>/assets/css/style.css">
 </head>
 <body>
     <h1>Home page</h1>
     <section>
-        <?php $model->getUserByID(42); ?>
+        <?php $model->getUserByID(45); ?>
     </section>
     <section>
         <?php $model->insertUpdateDeleteUser(); ?>

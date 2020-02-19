@@ -11,7 +11,7 @@ class Database
     public function __construct()
     {
         try {
-            $this->connection = new PDO('mysql:host=localhost:8889;dbname=testine;charset=utf8', 'root', 'root');
+            $this->connection = new PDO("mysql:host=" . CONFIG['db_hostname']. ";dbname=" . CONFIG['db_name'] . ";charset=" . CONFIG['db_charset'], CONFIG['db_username'], CONFIG['db_password']);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
         } catch (PDOException $e) {
@@ -41,7 +41,7 @@ class Database
     }
 
     // Remove
-    public function remove( $sql)
+    public function remove($sql)
     {
         $statement = $this->connection->query($sql);
         return $statement->rowCount();
