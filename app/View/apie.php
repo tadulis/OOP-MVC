@@ -1,11 +1,10 @@
 <?php
-   include_once '../config.php';
-   include_once '../Database.php';
+include_once '../../config.php';
+   include_once '../../Database.php';
    include_once '../Model/Form.php';
    include_once '../Model/Tables.php';
    include_once '../Model/Model.php';
    include_once '../Model/Menu.php';
-
 
    $model = New Model();
    $menu = New Menu();
@@ -23,7 +22,7 @@
     <link rel="stylesheet" href="/<?= CONFIG['site_path']; ?>/assets/css/style.css">
 </head>
 <body>
-    <h1>Home page</h1>
+    <h1>Apie page</h1>
     <section>
         <?php $model->getUserByID(45); ?>
     </section>

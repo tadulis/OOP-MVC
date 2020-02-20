@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 include_once 'Tables.php';
 include_once 'Form.php';
-include_once '../Database.php';
+include_once '../../Database.php';
 
 
 
