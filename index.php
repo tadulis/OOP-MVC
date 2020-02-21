@@ -1,24 +1,24 @@
 <?php
 
-// atvaizduoja visas PHP klaidas ekrane
+// php errors in display
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// nurodome jog bus pasiekiamos musu sukurtos klases
-include_once 'Form.php';
-include_once 'Database.php';
-include_once 'Model.php';
-include_once 'Controller.php';
-include_once 'View.php';
+// check PHP version
+if (phpversion() < 7.2) {
+    die("<pre>Your server is using PHP version " . phpversion() . ".<br/>Please upgrade to PHP v7.4.00 or higher.");
+}
 
-$model = New Model();
-$controller = New Controller($model);
-$view = New View($model, $controller);
+// // Autoload all Frame Core classes
+spl_autoload_register(function ($class_name) {
+	include str_replace("\\", DIRECTORY_SEPARATOR, $class_name) . ".php";
+});
 
-$userByID = $model->getUserByID(9);
-$view->printUserData($model->getAllUsersData());
-$view->printOneUserData($userByID);
+// Including configuration variables
+require_once "config.php";
 
+// Let's create an instance of the application
+$app = new Frame\App();
 
 ?>

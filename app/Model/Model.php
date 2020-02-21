@@ -4,14 +4,15 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-include_once 'Tables.php';
-include_once 'Form.php';
-include_once '../../Database.php';
+namespace models;
 
-
+use table\Tables;
+use form\Forms;
+use database\Database;
 
 class Model extends Database
 {
+
     public function getUserByID($id){
         $sql = "SELECT * FROM `users` WHERE `id` = $id";
         $userArray = $this->select($sql);

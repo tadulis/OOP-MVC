@@ -9,18 +9,10 @@
     <link rel="stylesheet" href="/<?= CONFIG['site_path']; ?>/assets/css/style.css">
 </head>
 <body>
-    <h1>Kainos page</h1>
-    <section>
-        <?php $model->getUserByID(45); ?>
-    </section>
-    <section>
-        <?php $model->insertUpdateDeleteUser(); ?>
-    </section>
-    <section>
-        <?php $model->getAllUsersData(); ?>
-    </section>
-    <section>
-        <?php $menu->getMenu(); ?>
-    </section>
-</body>
-</html>
+<nav>
+    <?php
+        foreach($data['menu'] as $button){
+            print '<a class="menu-link" name="' . $button['name'] .  '" href="' . $button['link'] . '">' . $button['name'] . '</a>';
+        }
+    ?>
+</nav>

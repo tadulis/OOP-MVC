@@ -1,18 +1,17 @@
 <?php
 
-include_once '../../Database.php';
-
-class Menu extends Database
+class Menu
 {
-    public function getMenu(){
-        $param = [];
-        $sql = "SELECT `name`, `link` FROM `menu`";
+    private $db;
 
-        print '<nav>';
-        foreach($this->select($sql) as $button){
-            print '<a class="menu-link" name="' . $button['name'] .  '" href="' . $button['link'] . '">' . $button['name'] . '</a>';
-        }
-        print '</nav>';
+    public function __construct($db)
+    {
+        $this->db = $db;
+    }
+
+    public function getLinks(){
+        $menu = $this->db->select("SELECT * FROM menu");
+        return $menu;
     }
 }
 

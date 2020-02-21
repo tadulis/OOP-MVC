@@ -1,8 +1,8 @@
 <?php
 include_once '../../config.php';
-   include_once '../../Database.php';
+   include_once '../../Frame/Database.php';
    include_once '../Model/Form.php';
-   include_once '../Model/Tables.php';
+
    include_once '../Model/Model.php';
    include_once '../Model/Menu.php';
 

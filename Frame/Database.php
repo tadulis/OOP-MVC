@@ -1,7 +1,9 @@
 <?php
 
-// use PDO;
-// use PDOException;
+namespace Frame;
+
+use PDO;
+use PDOException;
 
 class Database
 {
@@ -15,7 +17,7 @@ class Database
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
         } catch (PDOException $e) {
-            print 'db connection rrrr';
+            print 'db connection error';
         }
     }
 

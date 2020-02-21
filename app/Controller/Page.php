@@ -1,11 +1,13 @@
 <?php
 
-class Page
-{
-    private $model;
+use Frame\Controller;
 
-    public function __construct($model){
-        $this->model = $model;
+class Page extends Controller
+{
+    public function index(){
+        $menu = $this->model("Menu");
+        $data['menu'] = $menu->getLinks();
+        $this->view('home', $data);
     }
 }
 

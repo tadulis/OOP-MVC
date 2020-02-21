@@ -1,6 +1,8 @@
 <?php
 
-class Form
+namespace form;
+
+class Forms
 {
     public function insertUserForm(){
         print '
