@@ -9,10 +9,3 @@
     <link rel="stylesheet" href="/<?= CONFIG['site_path']; ?>/assets/css/style.css">
 </head>
 <body>
-<nav>
-    <?php
-        foreach($data['menu'] as $button){
-            print '<a class="menu-link" name="' . $button['name'] .  '" href="' . $button['link'] . '">' . $button['name'] . '</a>';
-        }
-    ?>
-</nav>

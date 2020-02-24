@@ -15,10 +15,14 @@ spl_autoload_register(function ($class_name) {
 	include str_replace("\\", DIRECTORY_SEPARATOR, $class_name) . ".php";
 });
 
+// check .htaccess file
+if (!file_exists('.htaccess')) {
+	die("<pre>No <b>.htaccess</b> file found. But it was in the .zip package.");
+}
+
 // Including configuration variables
 require_once "config.php";
 
 // Let's create an instance of the application
 $app = new Frame\App();
-
 ?>

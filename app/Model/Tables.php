@@ -1,7 +1,5 @@
 <?php
 
-namespace table;
-
 class Tables
 {
     public function printUserData($arrayObj){

@@ -20,6 +20,7 @@ class Controller
 	public function view($view, $data)
     {
         require_once "app/View/defaultUser/head.php";
+        require_once "app/View/defaultUser/header.php";
         require_once "app/View/" . $view . ".php";
         require_once "app/View/defaultUser/footer.php";
     }

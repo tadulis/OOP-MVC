@@ -8,7 +8,7 @@ class App
 {
 
     protected $controller = "Page";
-    protected $method = "index";
+    protected $method = "home";
     protected $args = [];
     protected $db;
 
@@ -20,7 +20,6 @@ class App
         $url = $this->parseUrl();
 
         if (file_exists('app/Controller/' . $url[0] . '.php')) {
-
             // set current controller
             $this->controller = $url[0];
 
@@ -59,7 +58,6 @@ class App
     protected function parseUrl()
     {
         if (isset($_GET['url'])) {
-
             return explode("/", filter_var(rtrim($_GET['url'], "/"), FILTER_SANITIZE_URL));
         }
     }
