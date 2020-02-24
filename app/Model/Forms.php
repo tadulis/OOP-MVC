@@ -1,7 +1,5 @@
 <?php
 
-namespace form;
-
 class Forms
 {
     public function insertUserForm(){
