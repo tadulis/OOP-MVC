@@ -13,6 +13,11 @@ class Menu
         $menu = $this->db->select("SELECT * FROM menu");
         return $menu;
     }
+
+    public function getRegLogLinks(){
+            $menu = $this->db->select("SELECT * FROM RegLog");
+            return $menu;
+        }
 }
 
 ?>

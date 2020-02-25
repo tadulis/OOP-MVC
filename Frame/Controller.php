@@ -24,6 +24,13 @@ class Controller
         require_once "app/View/" . $view . ".php";
         require_once "app/View/defaultUser/footer.php";
     }
-}
 
+    public function viewLoginRegister($view, $data)
+    {
+        require_once "app/View/defaultUser/head.php";
+        require_once "app/View/defaultUser/header.php";
+        require_once "app/View/login/" . $view . ".php";
+        require_once "app/View/defaultUser/footer.php";
+    }
+}
 ?>

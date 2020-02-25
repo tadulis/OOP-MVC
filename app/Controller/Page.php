@@ -4,6 +4,7 @@ use Frame\Controller;
 
 class Page extends Controller
 {
+
     public function home(){
         $menu = $this->model('Menu');
         $data['menu'] = $menu->getLinks();
@@ -37,5 +38,4 @@ class Page extends Controller
             $this->view('kontaktai', $data);
     }
 }
-
 ?>
