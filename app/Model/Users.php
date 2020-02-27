@@ -32,7 +32,7 @@ class Users extends Controller
             $email = $_POST['email'];
             $password = $_POST['psw'];
 
-            $this->db->insert("INSERT INTO `users`(`name`, `email`, `password`) VALUES ('$name', '$email', '$password')");
+            $this->db->insert("INSERT INTO `users`(`name`, `email`, `password`) VALUES ($name', '$email', '$password')");
         }elseif(isset($_POST['update'])){
              $name = $_POST['name'];
              $email = $_POST['email'];
