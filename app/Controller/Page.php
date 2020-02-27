@@ -11,7 +11,7 @@ class Page extends Controller
         $this->view('home', $data);
 
         $user = $this->model('Users');
-        $user->getUserByID(46);
+        $user->getUserByID(52);
     }
 
     public function apie(){
