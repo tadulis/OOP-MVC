@@ -6,9 +6,8 @@ use Frame\Database;
 
 class App
 {
-
-    protected $controller = "RegLog";
-    protected $method = "registerPage";
+    protected $controller = "Page";
+    protected $method = "home";
     protected $args = [];
     protected $db;
 
