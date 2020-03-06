@@ -21,5 +21,10 @@ class Controller
     {
         require_once "app/View/" . $view . ".php";
     }
+
+    public function viewLoginRegister($view, $data)
+    {
+        require_once "app/View/regLog/" . $view . ".php";
+    }
 }
 ?>

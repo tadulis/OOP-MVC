@@ -25,7 +25,7 @@ class Database
     public function select($sql)
     {
         $statement = $this->connection->query($sql);
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement->fetchAll(PDO::FETCH_OBJ);
     }
 
     // Insert
