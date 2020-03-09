@@ -5,8 +5,11 @@ use Frame\Controller;
 class Menu extends Controller
 {
     public function getLinks(){
-        $menu = $this->db->select("SELECT * FROM menu");
-        return $menu;
+        return $this->db->select("SELECT * FROM menu");
+    }
+
+    public function getLinksLoginRegister(){
+        return $this->db->select("SELECT * FROM RegLog");
     }
 }
 

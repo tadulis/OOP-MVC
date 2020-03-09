@@ -19,12 +19,17 @@ class Controller
 
 	public function view($view, $data)
     {
-        require_once "app/View/" . $view . ".php";
+    require_once "app/View/" . $view . ".php";
     }
 
     public function viewLoginRegister($view, $data)
     {
         require_once "app/View/regLog/" . $view . ".php";
+    }
+
+    public function viewAdmin($view, $data)
+    {
+        require_once "app/View/admin/" . $view . ".php";
     }
 }
 ?>
