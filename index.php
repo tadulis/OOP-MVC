@@ -12,12 +12,12 @@ if (phpversion() < 7.2) {
 
 // // Autoload all Frame Core classes
 spl_autoload_register(function ($class_name) {
-	include str_replace("\\", DIRECTORY_SEPARATOR, $class_name) . ".php";
+    include str_replace("\\", DIRECTORY_SEPARATOR, $class_name) . ".php";
 });
 
 // check .htaccess file
 if (!file_exists('.htaccess')) {
-	die("<pre>No <b>.htaccess</b> file found. But it was in the .zip package.");
+    die("<pre>No <b>.htaccess</b> file found. But it was in the .zip package.");
 }
 
 // Including configuration variables

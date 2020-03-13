@@ -13,9 +13,10 @@ class Database
     public function __construct()
     {
         try {
-            $this->connection = new PDO("mysql:host=" . CONFIG['db_hostname']. ";dbname=" . CONFIG['db_name'] . ";charset=" . CONFIG['db_charset'], CONFIG['db_username'], CONFIG['db_password']);
+            $this->connection = new PDO("mysql:host=" . CONFIG['db_hostname'] . ";dbname=" . CONFIG['db_name'] . ";charset=" . CONFIG['db_charset'],
+                CONFIG['db_username'], CONFIG['db_password']);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, FALSE);
+            $this->connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         } catch (PDOException $e) {
             print 'db connection error';
         }
@@ -54,4 +55,5 @@ class Database
         $this->connection = null;
     }
 }
+
 ?>

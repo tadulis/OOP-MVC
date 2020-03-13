@@ -13,13 +13,19 @@ class Controller
 
     public function model($model)
     {
-		require_once "app/Model/" . $model . ".php";
-		return new $model($this->db);
-	}
+        require_once "app/Model/" . $model . ".php";
+        return new $model($this->db);
+    }
 
-	public function view($view, $data)
+    public function redirect($controler, $model)
     {
-    require_once "app/View/" . $view . ".php";
+        $site = CONFIG['site_path'];
+        header("Location: /$site/$controler/$model");
+    }
+
+    public function view($view, $data)
+    {
+        require_once "app/View/" . $view . ".php";
     }
 
     public function viewLoginRegister($view, $data)
@@ -32,4 +38,5 @@ class Controller
         require_once "app/View/admin/" . $view . ".php";
     }
 }
+
 ?>

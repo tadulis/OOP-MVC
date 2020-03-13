@@ -13,7 +13,7 @@ class App
 
     public function __construct()
     {
-         $this->db = new Database();
+        $this->db = new Database();
 
         // parse the URL (explode on / char)
         $url = $this->parseUrl();

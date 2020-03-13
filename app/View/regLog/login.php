@@ -285,37 +285,30 @@
 </head>
 
 <body>
-    <nav>
-        <?php
-            foreach($data['menu'] as $object){
-                print '<a class="nav-bar" href="/' . CONFIG['site_path'] . $object->link . '">' . $object->name . '</a>';
-            }
-        ?>
-    </nav>
     <div class="wrapper fadeInDown">
         <div id="formContent">
-            <!-- Tabs Titles -->
-
-            <!-- Icon -->
             <div class="fadeIn first">
                 <h4>Login</h4>
             </div>
-
-            <!-- Login Form -->
             <form method="POST">
                 <input type="email" id="login" class="fadeIn second" name="email" placeholder="login">
                 <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
                 <input type="submit" class="fadeIn fourth" value="Log In" name="login">
             </form>
-                <?php
-                    if(isset($data['err'])){
-                        print '<span>' . $data['err'] . '</span>';
-                    }
-                ?>
-            <!-- Remind Passowrd -->
-            <div id="formFooter">
-                <a class="underlineHover" href="#">Forgot Password?</a>
-            </div>
+            <nav class="bg-dark">
+                <ul class="nav justify-content-center">
+                    <?php
+                        foreach($data['menu'] as $object){
+                            print '<li class="nav-item m-2"><a class="nav-item" href="/' . CONFIG['site_path'] . $object->link . '">' . $object->name . '</a></li>';
+                        }
+                    ?>
+                </ul>
+            </nav>
+            <?php
+                if(isset($data['err'])){
+                    print '<span>' . $data['err'] . '</span>';
+                }
+            ?>
         </div>
     </div>
 </body>
